@@ -1,4 +1,4 @@
-# videoplayerproject
+# Video Player
 #packages used :
   - video_player: ^2.5.1
   - chewie: ^1.4.0
