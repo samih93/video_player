@@ -51,21 +51,33 @@ class _VideoPlayerViewState extends State<VideoPlayerView> {
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Column(
       children: [
         Text("My Title"),
         SizedBox(
           height: 15,
         ),
-        AspectRatio(
-          aspectRatio: 16 / 9,
-          child: _videoPlayerController.value.isInitialized
-              ? Chewie(
+        _videoPlayerController.value.isInitialized
+            ? AspectRatio(
+                aspectRatio: 16 / 9,
+                child: Chewie(
                   controller: _chewieController,
-                )
-              : SizedBox(
-                  width: 15, height: 15, child: CircularProgressIndicator()),
-        ),
+                ))
+            : Stack(
+                alignment: AlignmentDirectional.center,
+                children: [
+                  Container(
+                    color: Colors.black,
+                    height: size.width / (16 / 9),
+                    width: double.infinity,
+                  ),
+                  SizedBox(
+                      width: 15,
+                      height: 15,
+                      child: CircularProgressIndicator()),
+                ],
+              ),
       ],
     );
   }

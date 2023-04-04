@@ -12,7 +12,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("video")),
       body: Padding(
-        padding: const EdgeInsets.all(10.0),
+        padding: const EdgeInsets.symmetric(vertical: 10),
         child: ListView(
           children: [
             SizedBox(
@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
             ),
             VideoPlayerView(
               url:
-                  "https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4",
+                  "https://trapflix.com/upload/videos/2022/12/45ZSLuKmdrscBfacrxek_16_f842ab853817a8913bd773746d29f359_video.mp4",
             ),
           ],
         ),
